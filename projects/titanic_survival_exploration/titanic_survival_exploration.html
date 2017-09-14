@@ -13272,7 +13272,7 @@ Make sure to keep track of the various features and conditions you tried before 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer</strong>: 81.03%</p>
+<p><strong>Answer</strong>: 81.03%. I visualized the outcomes along various features (e.g. Pclass, Embarked) with the goal of finding better survival rate more than 80% for the particular feature and filter combination. I checked features Pclass, Embarked, Fare, Parch, SibSp. Pclass is particularly more informative than others. For females in Pclass 1 or 2, the survival rate is very high. To capture more long trails, I also checked Pclass 3 combined with additional filters including SibSp and Embarked. They help improve the final prediction accuracy slightly. So the final condition I derived is: females in Pclass 1 or 2, or females in Pclass 3 who have 0 siblings/spouse or are embarked at C or Q.</p>
 
 </div>
 </div>
