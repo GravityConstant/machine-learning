@@ -12193,7 +12193,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> It is necessary to split a dataset into a training subset and testing subset and train the model with the training subset only. This will help avoid the overfitting problem because given a dataset it is possible to fit a model very accurately while it does very poorly in predicting with new data. Using a test subset it will also allow us to objectively develop performance metrics to measure the learning algorithms. The split should also be along certain ratios so that there are enough data in the training subset to provide good training and avoid underfitting problem.</p>
+<p><strong>Answer: </strong> The reason for splitting a dataset into training and testing subsets is to avoid training a model that is optimized towards the sample data but does not generalize well for new data. By training the model with the training subset only and measuring the model performance with the test subset, we can develop a better estimate of model accuracy.</p>
 
 </div>
 </div>
@@ -13835,7 +13835,7 @@ KaWUUkoppZRSSimljP8HSbnCuRHxmu0AAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>The k-fold cross-validation randomly divides a dataset into k subsets of equal size. Cross-validation is then performed k times with each time using a different subset as validation/test set and the rest of the subsets the training set. The final model performance is obtained by averaging over the k results from the k runs.</p>
+<p>The k-fold cross-validation sets aside a test subset and divides the rest of the sample dataset into k subsets of equal size. Cross-validation is then performed k times wit the k subsets. Each time it uses a different subset as validation/test set and the rest of the subsets the training set. The final model performance is obtained by averaging over the k results from the k runs.</p>
 <p>K-fold CV is useful for grid search because it reduces the variance of the performance estimate introduced by data split. Higher k and the averaging opertion both lower the variance. This is especially important for small datasets which may suffer higher variance of model estimate due to particular data split.</p>
 
 </div>
