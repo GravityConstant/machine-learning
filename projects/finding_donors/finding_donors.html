@@ -13955,7 +13955,9 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Logistic regression makes predictions using probability. First we train the logistic regression model with the data (personal data and their corresponding income levels) that we have collected. Based on the personal data, the model predicts the corresponding income levels. It compares the predictions with the actual income levels. It adjusts parameters gradually to make the predictions as close as possible to the actual result. Then, we feed in real personal data with unknown income levels to the trained model and make predictions. The model will spit out a number between 0 and 1. If it is greater than 0.5, we say the model predicts the person's income is &gt;= $50K. Otherwise, it is < $50K.</p>
+<p><strong>Answer: </strong> After the initial training using the training data Logistic Regression gives each feature a weight which is obtained by minimizing a cost function derived from the linear model assumption.</p>
+<p>When we are predicting we take all feature values and multiply them with the corresponding weights obtained from the training. We then sum up all the results.</p>
+<p>This final result is applied to a special function called Sigmoid/Logistic function which converts the above summation result into a value between 0 and 1. If the value is greater than 0.5, we say the model predicts the person's income is &gt;= 50K. Otherwise, it is &lt; 50K.</p>
 
 </div>
 </div>
