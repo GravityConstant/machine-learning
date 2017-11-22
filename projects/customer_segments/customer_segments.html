@@ -17974,7 +17974,15 @@ zM3wGAAAAABJRU5ErkJggg==
 <ul>
 <li>0.7068</li>
 <li>0.9311</li>
-<li>In the 1st dimension, Milk, Grocery, and Detergents_Paper have high weights; In the 2nd dimension, Fresh, Frozen, and Delicatessen have high weights; In the 3rd dimension, Fresh and Delicatessen are of high weights but in an opposite direction; In the 4th dimension, Frozen has the highest weight while Delicatessen is a bit smaller and in an opposite direction; In the 5th dimension, Milk and Detergents_Paper have high weight but opposite direction; In the 6th dimension, Grocery has the highest weight, and Milk also has high weight along opposite direction. The first four dimensions can be used to separate out certain kind of customers along different dimensions. For example, grocery stores can be separated from other customers along the 1st dimension; restaurants can be separated from others along the 2nd dimension.</li>
+<li><ul>
+<li>In the 1st dimension, Milk, Grocery, and Detergents_Paper have high negative weights, which makes this dimension suitable for identifying customers in the wholesale retailers segment; </li>
+<li>In the 2nd dimension, Fresh, Frozen, and Delicatessen have high negative weights, which makes this dimension suitable for identifying customers in the restaurants segment;</li>
+<li>In the 3rd dimension, Fresh and Delicatessen are of high weights with different signs. It might be good for identifying customers in either cafe/delis or grocery stores segments;</li>
+<li>In the 4th dimension, Frozen has the highest weight while Delicatessen is a bit smaller with a different sign; It might be good for identifying customers in either markets or cafe/delis segments;</li>
+<li>In the 5th dimension, Milk and Detergents_Paper have high weight but opposite direction; </li>
+<li>In the 6th dimension, Grocery has the highest weight, and Milk also has high weight along opposite direction.</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -21596,7 +21604,7 @@ Sample point 2 predicted to be in Cluster 1
 <p><strong>Answer:</strong></p>
 <ul>
 <li>Customer 0: wholesale retailers; Customer 1: restaurants; Customer 2: restaurants</li>
-<li>Yes.</li>
+<li>Customer 0 and 2 are totally consistent with my earlier predictions. For Customer 1, my earlier prediction was Cafe/Delis, while the clustering analysis gives Restaurants. The discrepancy is still reasonble because cafe/delis can be considered as restaurants and they are significantly different from retailers. </li>
 </ul>
 
 </div>
