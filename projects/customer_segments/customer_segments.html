@@ -17608,7 +17608,7 @@ Once you have performed this implementation, the dataset will be stored in the v
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with the same number of dimensions as features</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">()</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># TODO: Transform log_samples using the PCA fit above</span>
 <span class="n">pca_samples</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">log_samples</span><span class="p">)</span>
@@ -17967,9 +17967,9 @@ SZIkSZIkSZIkSZIkSZIkSZIkvR3+DwfI3OtB459eAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>0.7664</li>
-<li>0.9559</li>
-<li>In the 1st dimension, Detergent_Papers has the most impact while Fresh has little. Frozen and Fresh are contrast to all the others. In the 2nd dimension, Fresh is the most impactful, and Detergents_Papers is contrast to all the others. In the 3rd dimension, Fresh is the most impactful and is contrast to all the others. In the 4th dimension, Delicatessen is the most impactful, and it together with Milk are contrast to all the others. In the 5th dimension, Milk is the most impactful, and it together with Frozen are contrast to all the others. In the 6th dimension, Grocery and Detergents_Papers are the most impactful and they are perfectly contrast to each other. The first four dimensions reveal common spend patterns. For examples, customers who spend a lot on Detergents_Papers tend to spend a lot as well on Milk and Grocery, and big spend on Fresh often means big spend on Frozen and Delicatessen.</li>
+<li>0.8609</li>
+<li>0.9773</li>
+<li>In the 1st dimension, Frozen has the most impact and has good correlation with Delicatessen. In the 2nd dimension, Fresh is contrast to all the others. In the 3rd dimension, Fresh/Milk/Delicatessen are well contrast to the others. In the 4th dimension, Fresh is the most impactful. In the 5th dimension, Milk and Delicatessen are contrasting to each other. In the 6th dimension, Grocery is the most impactful. The first four dimensions reveal common spend patterns. For examples, customers who spend a lot on Frozen tend to spend a lot as well on Delicatessen, and big spend on Fresh is contrasting to other spends.</li>
 </ul>
 
 </div>
@@ -18324,7 +18324,7 @@ SZIkSZIkSZIkSZIkSZIkSZIkvR3+DwfI3OtB459eAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes.AxesSubplot at 0x112c69810&gt;</pre>
+<pre>&lt;matplotlib.axes.AxesSubplot at 0x10cd45c90&gt;</pre>
 </div>
 
 </div>
@@ -19907,7 +19907,7 @@ AAAAAElFTkSuQmCC
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Apply your clustering algorithm of choice to the reduced data </span>
 <span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
-<span class="n">clusterer</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
+<span class="n">clusterer</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
 <span class="c1">#from sklearn.cluster import KMeans</span>
 <span class="c1">#clusterer = KMeans(n_clusters=2).fit(reduced_data)</span>
 
