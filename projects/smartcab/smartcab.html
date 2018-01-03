@@ -11933,7 +11933,7 @@ div#notebook {
 <li>num_dummies: discrete number of dummy agents in the environment, default is 100; learning: set to True to force the driving agent to use Q-learning; log_metrics: set to True to log trial and simulation results to /logs.</li>
 <li>act()</li>
 <li>render() is the GUI render display of the simulation while render_text() is the non-GUI render display of the simulation which displays simulated trial data in the terminal/command prompt.</li>
-<li>No. It checks if the destination is at location first.</li>
+<li>It checks East-West direction first.</li>
 </ul>
 
 </div>
@@ -13063,7 +13063,8 @@ I would choose 'waypoint', 'light', 'left', and 'oncoming' as the features for l
 <ul>
 <li>'waypoint': is needed to learn the best action to take next given the routing instruction and the environment inputs</li>
 <li>'light': is needed in order to learn not causing traffic violations</li>
-<li>'left', 'oncoming': are needed to learn not causing traffic accidents</li>
+<li>'left': is needed in order to learn not causing accident when there is a vehicle on the left moving forward and the agent intends to turn right.</li>
+<li>'oncoming': is needed in order to learn not causing accident when it needs to yield to the oncoming vehicle.</li>
 <li>'right': is NOT chosen because vehicles on the right will not cause accidents unless either the agent or the right vehicles do not respect the red light.</li>
 <li>'deadline': is NOT chosen because including it in learning would significantly increase the state space and thus decrease the learning efficiency.</li>
 </ul>
@@ -15961,7 +15962,7 @@ ERERERERERERERERERERERERERERERERERERkYT+H/9w0BBB8n+nAAAAAElFTkSuQmCC
 <ul>
 <li>I used <code>epsilon = epsilon - 0.005</code></li>
 <li>About 200.</li>
-<li>I used <code>tolerance = 0.0001</code> and <code>alpha = 0.01</code>. I chose them because the state space is of size 96 and I want to let the Q-Learning algorithm to have enough trials to explore the whole state space.</li>
+<li>I used <code>tolerance = 0.0001</code> and <code>alpha = 0.01</code>. I chose them because the state space is of size 96 and I want to let the Q-Learning algorithm to have enough trials to explore the whole state space. I used a small learning rate alpha because I don't want the learning to be only dependent on a few previous steps and also because the environment is set up as a stochastic system which needs to have a learning rate decreasing to zero. </li>
 <li>Both safety and reliability were improved signicantly, A+ and A, versus F and A of the default Q-Learner, respectively.</li>
 <li>Yes.</li>
 <li>Yes.</li>
@@ -16156,7 +16157,7 @@ ERERERERERERERERERERERERERERERERERERkYT+H/9w0BBB8n+nAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
 First, the smartcab needs to make a good action at each time step, while incorporating a discount factor will favor good actions near the end of the trip while allowing possibly bad ones at the beginning. This is not acceptable especially if the actions may cause traffic violations/accidents.</p>
-<p>Second, the current environment setup doesn't offer location information of the smartcab. It only provides waypoint information, which doesn't enable distance-based discounting.</p>
+<p>Second, the current environment generates a goal randomly for each trial, which doesn't yield a good way for generating future rewards because they are location based rather than traffic rule based.</p>
 
 </div>
 </div>
